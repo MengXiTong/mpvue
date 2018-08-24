@@ -9,7 +9,7 @@
 	},
 	"miniprogramRoot": "./dist/",
 	"compileType": "miniprogram",
-	"appid": "touristappid",
+	"appid": "wxa2e04a8977f0f080",
 	"projectname": "mpvue",
 	"condition": {
 		"search": {
