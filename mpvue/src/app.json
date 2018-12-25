@@ -1,14 +1,15 @@
 {
   "pages": [
+    "pages/counter/main",
     "pages/index/main",
     "pages/logs/main",
-    "pages/counter/main",
     "pages/userInfo/main"
   ],
   "window": {
     "navigationBarTitleText": "测试",
     "navigationBarTextStyle": "white",
     "navigationBarBackgroundColor": "#f59d71",
-    "navigationStyle": "custom"
+    "navigationStyle": "custom",
+    "disableScroll": true
   }
 }

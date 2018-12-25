@@ -20,6 +20,8 @@
     </form>
     <a href="/pages/counter/main" class="counter">去往Vuex示例页面</a>
 
+    <ui-switch :value="switchValue" @changeSwitch="changeSwitch"></ui-switch>
+
     <div class="echarts-wrap">
       <mpvue-echarts :echarts="echarts" :onInit="initChart" />
     </div>
@@ -28,8 +30,9 @@
 
 <script>
 import card from "@/components/card";
-import mpvueEcharts from "mpvue-echarts";
-import * as echarts from "echarts";
+// import mpvueEcharts from "mpvue-echarts";
+// import * as echarts from "echarts";
+import uiSwitch from "@/components/uiSwitch";
 
 export default {
   data() {
@@ -37,13 +40,15 @@ export default {
       motto: "Hello World",
       userInfo: {},
       echarts,
-      resdata: []
+      resdata: [],
+      switchValue: true
     };
   },
 
   components: {
     card,
-    mpvueEcharts
+    mpvueEcharts,
+    uiSwitch
   },
 
   methods: {
@@ -132,6 +137,9 @@ export default {
       };
       chart.setOption(option);
       return chart;
+    },
+    changeSwitch(e){
+      console.log(e);
     }
   },
 
