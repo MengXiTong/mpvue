@@ -1,12 +1,18 @@
 <template>
-    <div class="weui-div" :style="{'color':color}" @click.stop="toggle">
-        <div class="weui-switch" :style="{borderColor: colorValue,backgroundColor: colorValue}">
-            <div class="weui-switch-b"></div>
-            <div class="weui-switch-a" :class="{'weui-switch-on' : me_checked}"></div>
-        </div>
-        <div v-if="me_checked" class="weui-div-1">{{actionText}}</div>
-        <div v-else class="weui-div-2">{{unactionText}}</div>
+  <div class="weui-div"
+       :style="{'color':color}"
+       @click.stop="toggle">
+    <div class="weui-switch"
+         :style="{borderColor: colorValue,backgroundColor: colorValue}">
+      <div class="weui-switch-b"></div>
+      <div class="weui-switch-a"
+           :class="{'weui-switch-on' : me_checked}"></div>
     </div>
+    <div v-if="me_checked"
+         class="weui-div-1">{{actionText}}</div>
+    <div v-else
+         class="weui-div-2">{{unactionText}}</div>
+  </div>
 </template>
 
 <script>
@@ -64,7 +70,10 @@ export default {
       // 是否可点击
       if (this.handle === true) {
         this.me_checked = !this.me_checked;
-        this.$emit("changeSwitch", { value: this.me_checked, id: this.id });
+        this.$emit("changeSwitch", {
+          value: this.me_checked,
+          id: this.id
+        });
       }
     }
   }
@@ -79,6 +88,7 @@ export default {
   width: 82px;
   height: 32px;
 }
+
 .weui-div-1 {
   position: absolute;
   left: 15px;
@@ -86,6 +96,7 @@ export default {
   line-height: 32px;
   font-size: 14px;
 }
+
 .weui-div-2 {
   position: absolute;
   right: 15px;
@@ -93,6 +104,7 @@ export default {
   line-height: 32px;
   font-size: 14px;
 }
+
 .weui-switch {
   display: block;
   position: relative;
@@ -105,6 +117,7 @@ export default {
   transition: background-color 0.1s, border 0.1s;
   cursor: pointer;
 }
+
 .weui-switch-b {
   content: " ";
   position: absolute;
@@ -115,6 +128,7 @@ export default {
   border-radius: 15px;
   transition: transform 0.35s cubic-bezier(0.45, 1, 0.4, 1);
 }
+
 .weui-switch-a {
   content: " ";
   position: absolute;
@@ -127,6 +141,7 @@ export default {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
   transition: transform 0.35s cubic-bezier(0.4, 0.4, 0.25, 1.35);
 }
+
 .weui-switch-on {
   transform: translateX(50px);
 }
